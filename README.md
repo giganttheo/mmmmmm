@@ -1,4 +1,6 @@
-♨️ micro manager for making memorable memos from multimodal presentations with a visual essence
+♨️ microwave toolkit: presentations Made Manageable & Memorable with MultiModal Models
+
+A set of tools designed to help you understand and process multimodal presentations using deep learning models. Whether you need to navigate through complex presentations, extract key information, or analyze content, this toolkit provides the tools and features to make presentations more manageable and memorable.
 
 [===WIP===]
 
