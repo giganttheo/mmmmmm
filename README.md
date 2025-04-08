@@ -6,7 +6,7 @@ A set of tools designed to help you understand and process multimodal presentati
 
 Preprocess a presentation record:
 * Transcription
-* [Slide extraction](/slide-extractor/)
+* [Slide extractor](/slide-extractor/): lightweight methods to extract the slides from a video record
 
 Visualize a multimodal presentation:
 * Interleaved image-text visualization
