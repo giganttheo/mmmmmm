@@ -1,0 +1,1 @@
+Transcription with word-level timestamps using [whisper_timestamped](https://github.com/linto-ai/whisper-timestamped).

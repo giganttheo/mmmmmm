@@ -5,7 +5,7 @@ A set of tools designed to help you understand and process multimodal presentati
 [===WIP===]
 
 Preprocess a presentation record:
-* Transcription
+* [Transcription](/transcription/): automatic speech recognition with word-level timestamps 
 * [Slide extractor](/slide-extractor/): lightweight methods to extract the slides from a video record
 
 Visualize a multimodal presentation:
