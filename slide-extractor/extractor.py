@@ -65,7 +65,7 @@ def get_bounds(hashes, zscore_threshold=3):
     bounds.append({"start": hashes[i_start]["timestamp"], "end": hashes[-1]["timestamp"]})
     return bounds
 
-def get_slides(vid_path, hashes, zscore_threshold, save_imgs=False, save_pdf=True):
+def get_slides(vid_path, hashes, zscore_threshold, save_folder=FOLDER_PATH, save_imgs=False, save_pdf=True):
     # extract the slides according to the hashes wrt the zscore threshold
     vr = VideoReader(vid_path, ctx=cpu(0))
     slideshow = []
@@ -75,19 +75,19 @@ def get_slides(vid_path, hashes, zscore_threshold, save_imgs=False, save_pdf=Tru
     for i  in range(len(hashes)):
         if zscores[i] > zscore_threshold:
             # if the distance is multiple standard deviations above the observed mean, we detect a slide change
-            path=f'{FOLDER_PATH}/{vid_path.split("/")[-1].split(".")[0]}_{i_start}_{i-1}.png'
+            path=f'{save_folder}/{vid_path.split("/")[-1].split(".")[0]}_{i_start}_{i-1}.png'
             slides.append(Image.fromarray(vr[hashes[i-1]["frame_id"]].asnumpy()))
             if save_imgs:
                 slides[-1].save(path)
             slideshow.append({"slide": path, "start": i_start, "end": i-1})
             i_start=i
-    path=f'{FOLDER_PATH}/{vid_path.split("/")[-1].split(".")[0]}_{i_start}_{len(vr)-1}.png'
+    path=f'{save_folder}/{vid_path.split("/")[-1].split(".")[0]}_{i_start}_{len(vr)-1}.png'
     if save_imgs:
         Image.fromarray(vr[-1].asnumpy()).save(path)
     slides.append(Image.fromarray(vr[-1].asnumpy()))
     if save_pdf:
         slides[0].save(
-        f'{FOLDER_PATH}/{vid_path.split("/")[-1].split(".")[0]}_slideshow.pdf', "PDF" ,resolution=100.0, save_all=True, append_images=slides[1:]
+        f'{save_folder}/{vid_path.split("/")[-1].split(".")[0]}_slideshow.pdf', "PDF" ,resolution=100.0, save_all=True, append_images=slides[1:]
         )
     slideshow.append({"slide": path, "start": i_start, "end": len(vr)-1})
     return [s["slide"] for s in slideshow]
