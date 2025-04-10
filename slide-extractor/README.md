@@ -8,6 +8,8 @@ Slide boundaries are estimated from high perceptual hash distances between conse
 # Usage
 
 ```python
+from extractor import compute_batch_hashes, get_slides
+
 filepath = "" #path to the video file
 save_folder = "" #path to the folder where to save the extracted pdf
 
