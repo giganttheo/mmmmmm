@@ -19,6 +19,10 @@ h = compute_batch_hashes(filepath)
 #extract the slides and save the slidedeck as a pdf
 get_slides(filepath, h, save_folder, zscore_threshold=4) #save_imgs=True to save the frames as individual images
 ```
+---
+# Benchmark
+
+[TODO]
 
 ---
 # Citation
