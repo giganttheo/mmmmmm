@@ -8,8 +8,8 @@ Preprocess a presentation record:
 * [Transcription](/transcription/): automatic speech recognition with word-level timestamps 
 * [Slide extractor](/slide-extractor/): lightweight methods to extract the slides from a video record
 
-Visualize a multimodal presentation:
-* Interleaved image-text visualization
+Representation of a multimodal presentation:
+* [Interleaver](/interleaver/): Create and visualize interleaved slides-transcript representation of multimodal presentations
 
 Summarize the content:
 * Generate an abstractive summary
