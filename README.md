@@ -7,7 +7,7 @@ A set of tools designed to help you understand and process multimodal presentati
 [===WIP===]
 </p>
 <p align="center">
-<img src="./figures/mmmmmm.gif" width="200" height="200" border="10"/>
+<img src="./figures/mmmmmm.gif" height="200" border="10"/>
 </p>
 <p align="center">
 ♨️ Be patient, it's cooking! ♨️
@@ -18,7 +18,7 @@ A set of tools designed to help you understand and process multimodal presentati
 # Tools
 
 <p align="center">
-<img src="./figures/tools.png" width="400" height="400" border="10"/>
+<img src="./figures/tools.png" height="400" border="10"/>
 </p>
 
 * [`transcription`](/transcription/): automatic speech recognition with word-level timestamps 
