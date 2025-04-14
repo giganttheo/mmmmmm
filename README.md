@@ -4,12 +4,14 @@ A set of tools designed to help you understand and process multimodal presentati
 
 [===WIP===]
 
-Preprocess a presentation record:
-* [Transcription](/transcription/): automatic speech recognition with word-level timestamps 
-* [Slide extractor](/slide-extractor/): lightweight methods to extract the slides from a video record
+![](./figures/tools.png)
 
-Visualize a multimodal presentation:
-* Interleaved image-text visualization
+Preprocess a presentation record:
+* [`transcription`](/transcription/): automatic speech recognition with word-level timestamps 
+* [`slide extractor`](/slide-extractor/): lightweight methods to extract the slides from a video record
+
+Representation of a multimodal presentation:
+* [`interleaver`](/interleaver/): Create and visualize interleaved slides-transcript representation of multimodal presentations
 
 Summarize the content:
 * Generate an abstractive summary

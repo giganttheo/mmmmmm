@@ -1,16 +1,15 @@
-# FULL IMAGE VERSION -- quick extraction
-
-BATCH_SIZE = 64
-DOWNSAMPLE = 10
-FOLDER_PATH = "../demo/slides"
-
 import jax.numpy as jnp
 import numpy as np
 from PIL import Image
 from decord import VideoReader
 from decord import cpu
+import json
 
 from phash import batch_phash, hash_dist
+
+BATCH_SIZE = 64
+DOWNSAMPLE = 10
+FOLDER_PATH = "../demo/slides"
 
 def binary_array_to_hex(arr):
 	"""
@@ -65,7 +64,7 @@ def get_bounds(hashes, zscore_threshold=3):
     bounds.append({"start": hashes[i_start]["timestamp"], "end": hashes[-1]["timestamp"]})
     return bounds
 
-def get_slides(vid_path, hashes, zscore_threshold, save_folder=FOLDER_PATH, save_imgs=False, save_pdf=True):
+def get_slides(vid_path, hashes, zscore_threshold, save_folder=FOLDER_PATH, save_imgs=False, save_pdf=True, save_json=True):
     # extract the slides according to the hashes wrt the zscore threshold
     vr = VideoReader(vid_path, ctx=cpu(0))
     slideshow = []
@@ -90,8 +89,9 @@ def get_slides(vid_path, hashes, zscore_threshold, save_folder=FOLDER_PATH, save
         f'{save_folder}/{vid_path.split("/")[-1].split(".")[0]}_slideshow.pdf', "PDF" ,resolution=100.0, save_all=True, append_images=slides[1:]
         )
     slideshow.append({"slide": path, "start": i_start, "end": len(vr)-1})
-    return [s["slide"] for s in slideshow]
-
+    if save_json:
+        with open(f'{save_folder}/{vid_path.split("/")[-1].split(".")[0]}_slideshow.json', 'w') as f:
+            json.dump(slideshow, f)
 
 
 if __name__ == "__main__":
