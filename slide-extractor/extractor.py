@@ -75,7 +75,8 @@ def get_slides(vid_path, hashes, zscore_threshold, save_folder=FOLDER_PATH, save
         if zscores[i] > zscore_threshold:
             # if the distance is multiple standard deviations above the observed mean, we detect a slide change
             path=f'{save_folder}/{vid_path.split("/")[-1].split(".")[0]}_{i_start}_{i-1}.png'
-            slides.append(Image.fromarray(vr[hashes[i-1]["frame_id"]].asnumpy()))
+            index_mid = int((i + i_start)/2)
+            slides.append(Image.fromarray(vr[hashes[index_mid]["frame_id"]].asnumpy()))
             if save_imgs:
                 slides[-1].save(path)
             slideshow.append({"slide": path, "start": i_start, "end": i-1})
