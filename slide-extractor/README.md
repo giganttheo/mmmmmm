@@ -22,11 +22,11 @@ get_slides(filepath, h, zscore_threshold=4, save_folder=save_folder) #save_imgs=
 ---
 # Benchmark
 
-Evaluation on the videos and manually segmented slides from the [LPM dataset](https://github.com/dondongwon/LPMDataset).
+Evaluation on the videos and manually segmented slides from the [LPM dataset](https://github.com/dondongwon/LPMDataset). Precision, recall, coverage and purity metrics are computed using the [`pyannote-metrics`](https://github.com/pyannote/pyannote-metrics) library. Window diff follows the implementation from [`nltk`](https://github.com/nltk/nltk). When it is relevant, we use a tolerance of 1 second, and a sample rate of 1/tolerance = 1Hz
 
 | Method | Execution time (colab cpu, per input hour) $\downarrow$ | Precision $\uparrow$ | Recall $\uparrow$ | Coverage $\uparrow$ | Purity $\uparrow$ | Window Diff $\downarrow$ |
 | ------------- | ------------- | ------------- | ------------- | ------------- | ------------- | ------------- |
-| phash (zscore-threshold = 4) | 2min 15s | 66.45  | 83.19 | 92.12 | 90.51 | 14.14 |
+| phash (zscore-threshold = 4) | 2min 15s | 70.65  | 88.16 | 92.78 | 93.45 | 13.06 |
 
 ---
 # Citation
