@@ -24,7 +24,7 @@ get_slides(filepath, h, zscore_threshold=4, save_folder=save_folder) #save_imgs=
 
 Evaluation on the videos and manually segmented slides from the [LPM dataset](https://github.com/dondongwon/LPMDataset).
 
-| Method | Execution time (colab cpu, per input hour) $\downarrow$ | Precision $\uparrow$ | Recall $\uparrow$ | Coverage $\uparrow$ | Purity $\uparrow$ | Window Diff $\uparrow$ |
+| Method | Execution time (colab cpu, per input hour) $\downarrow$ | Precision $\uparrow$ | Recall $\uparrow$ | Coverage $\uparrow$ | Purity $\uparrow$ | Window Diff $\downarrow$ |
 | ------------- | ------------- | ------------- | ------------- | ------------- | ------------- | ------------- |
 | phash (zscore-threshold = 4) | 2min 15s | 66.45  | 83.19 | 92.12 | 90.51 | 14.14 |
 
