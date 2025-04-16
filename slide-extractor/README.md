@@ -22,7 +22,11 @@ get_slides(filepath, h, save_folder, zscore_threshold=4) #save_imgs=True to save
 ---
 # Benchmark
 
-[TODO]
+Evaluation on the videos and manually segmented slides from the [LPM dataset](https://github.com/dondongwon/LPMDataset).
+
+| Method | Time (per input minute) $\downarrow$ | Precision $\uparrow$ | Recall $\uparrow$ | Coverage $\uparrow$ | Purity $\uparrow$ | Window Diff $\uparrow$ |
+| ------------- | ------------- | ------------- | ------------- | ------------- | ------------- | ------------- |
+| phash (zscore-threshold = 4) |  | 66.45  | 83.19 | 92.12 | 90.51 | 14.14 |
 
 ---
 # Citation
