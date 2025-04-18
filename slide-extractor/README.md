@@ -19,6 +19,13 @@ h = compute_batch_hashes(filepath)
 #extract the slides and save the slidedeck as a pdf
 get_slides(filepath, h, zscore_threshold=4, save_folder=save_folder) #save_imgs=True to save the frames as individual images
 ```
+
+---
+# Demo
+
+[A demo app is available on the HuggingFace hub](https://huggingface.co/spaces/gigant/slideshow_extraction) (WIP).
+
+
 ---
 # Benchmark
 
