@@ -2,7 +2,7 @@ import jax.numpy as jnp
 import numpy as np
 from PIL import Image
 from decord import VideoReader
-from decord import cpu
+from decord import cpu, gpu
 import json
 
 from phash import batch_phash, hash_dist
@@ -22,7 +22,8 @@ def binary_array_to_hex(arr):
 def compute_batch_hashes(vid_path):
     # batched computation of hashes in the video
     kwargs={"width": 64, "height":64}
-    vr = VideoReader(vid_path, ctx=cpu(0), **kwargs)
+    ctx = gpu(0) if jax.default_backend() == 'gpu' else cpu(0)
+    vr = VideoReader(vid_path, ctx=ctx, **kwargs)
     avg_fps = vr.get_avg_fps()
     hashes = []
     h_prev = None
@@ -66,7 +67,8 @@ def get_bounds(hashes, zscore_threshold=3):
 
 def get_slides(vid_path, hashes, zscore_threshold, save_folder=FOLDER_PATH, save_imgs=False, save_pdf=True, save_json=True):
     # extract the slides according to the hashes wrt the zscore threshold
-    vr = VideoReader(vid_path, ctx=cpu(0))
+    ctx = gpu(0) if jax.default_backend() == 'gpu' else cpu(0)
+    vr = VideoReader(vid_path, ctx=ctx)
     slideshow = []
     i_start = 0
     slides = []
