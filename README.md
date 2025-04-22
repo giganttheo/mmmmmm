@@ -21,7 +21,7 @@ A set of tools designed to help you understand and process multimodal presentati
 <img src="./figures/tools.png" height="400" border="10"/>
 </p>
 
-* [`transcription`](/transcription/): automatic speech recognition with word-level timestamps 
+* [`transcriber`](/transcriber/): automatic speech recognition with word-level timestamps 
 * [`slide extractor`](/slide-extractor/): lightweight methods to extract the slides from a video record
 * [`interleaver`](/interleaver/): Create and visualize interleaved slides-transcript representation of multimodal presentations
 
