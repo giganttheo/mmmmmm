@@ -32,10 +32,11 @@ get_slides(filepath, h, zscore_threshold=4, save_folder=save_folder) #save_imgs=
 Evaluation on the videos and manually segmented slides from the [LPM dataset](https://github.com/dondongwon/LPMDataset). Precision, recall, coverage and purity metrics are computed using the [`pyannote-metrics`](https://github.com/pyannote/pyannote-metrics) library. Window diff follows the implementation from [`nltk`](https://github.com/nltk/nltk). When it is relevant, we use a tolerance of 1 second, and a sample rate of 1/tolerance = 1Hz. Our algorithm processes a 1 hour-long video in 2min 15s on CPU. 
 
 
-| Method | Precision $\uparrow$ | Recall $\uparrow$ | Coverage $\uparrow$ | Purity $\uparrow$ | Window Diff $\downarrow$ |
-| ------------- | ------------- | ------------- | ------------- | ------------- | ------------- |
-| [`PySceneDetect`](https://github.com/Breakthrough/PySceneDetect) (ContentDetector) | 64.12 | 22.10 | 99.29 | 37.08 | 32.89 |
-| phash (zscore-threshold = 4)| 70.65  | 88.16 | 92.78 | 93.45 | 13.06 |
+| Method | Precision $\uparrow$ | Recall $\uparrow$ | Purity $\uparrow$ | Window Diff $\downarrow$ |
+| ------------- | ------------- | ------------- | ------------- | ------------- |
+| [`vid2slides`](https://github.com/patrickmineault/vid2slides) (Hidden Markov Model) | 1.00 | 1.15 | 90.35 | 19.56 |
+| [`PySceneDetect`](https://github.com/Breakthrough/PySceneDetect) (ContentDetector) | 64.12 | 22.10 | 37.08 | 32.89 |
+| phash (zscore-threshold = 4)| **70.65**  | **88.16** | **93.45** | **13.06** |
 
 ---
 # Citation
