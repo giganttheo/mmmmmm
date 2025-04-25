@@ -34,7 +34,7 @@ Evaluation on the videos and manually segmented slides from the [LPM dataset](ht
 
 | Method | Precision $\uparrow$ | Recall $\uparrow$ | Purity $\uparrow$ | Window Diff $\downarrow$ |
 | ------------- | ------------- | ------------- | ------------- | ------------- |
-| [`vid2slides`](https://github.com/patrickmineault/vid2slides) (Hidden Markov Model) | 1.00 | 1.15 | 90.35 | 19.56 |
+| [`vid2slides`](https://github.com/patrickmineault/vid2slides) (Hidden Markov Model) | 0.75 | 0.90 | 90.65 | 17.66 |
 | [`PySceneDetect`](https://github.com/Breakthrough/PySceneDetect) (ContentDetector) | 64.12 | 22.10 | 37.08 | 32.89 |
 | phash (zscore-threshold = 4)| **70.65**  | **88.16** | **93.45** | **13.06** |
 
